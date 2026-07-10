@@ -1,0 +1,142 @@
+
+
+.members-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.member-card {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.member-card figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border-radius: 12px;
+
+  transition:
+    background-color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.member-card:hover figure {
+  background: var(--bg-section-alt);
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info {
+  padding: 15px;
+}
+
+.member-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.member-info h3 {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.expanded-text {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+  z-index: 1;
+
+  cursor: pointer;
+}
+
+#member-1:checked + .member-card figure,
+#member-2:checked + .member-card figure,
+#member-3:checked + .member-card figure {
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: min(420px, 92vw);
+
+  background: var(--bg-card);
+
+  border-radius: 14px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+
+  z-index: 2;
+
+  animation: modalFade var(--transition-speed) var(--transition-func);
+}
+
+#member-1:checked + .member-card .expanded-text,
+#member-2:checked + .member-card .expanded-text,
+#member-3:checked + .member-card .expanded-text {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#member-1:checked ~ .backdrop-1,
+#member-2:checked ~ .backdrop-2,
+#member-3:checked ~ .backdrop-3 {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
