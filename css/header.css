@@ -33,13 +33,13 @@ li a:hover {
 }
 
 /* Mobile menu toggle (hidden on desktop, shown <=768px in media.css).
-   padding: 16px mirrors the logo, so the hamburger icon sits the same
-   distance from the right edge as the logo text does from the left; the
-   padding around the 22x16 icon also keeps the tap target >=44px.
-   background/border are cleared to strip the default button chrome. */
+   Every property declared by the button rule in contacts.css is reset
+   here explicitly so the toggle never inherits the form-button look. */
 .menu-toggle {
   display: none;
-  padding: 24px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: none;
   border-radius: 8px;
   background: transparent;
@@ -51,7 +51,8 @@ li a:hover {
   gap: 5px;
 }
 
-/* Subtle hover feedback for pointer users on narrow viewports. */
+/* Needed at (0,2,0): the button:hover rule in contacts.css is (0,1,1)
+   and would otherwise repaint the toggle on hover. */
 .menu-toggle:hover {
   background: var(--bg-section-alt);
 }
