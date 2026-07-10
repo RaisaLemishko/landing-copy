@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G & G</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#hero" class="logo">G & G</a>
+
+        <ul>
+          <li><a href="#hero">Про гурт</a></li>
+          <li><a href="#schedule">Концерти</a></li>
+          <li><a href="#members">Галерея</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Гурт «Грим та Грім»</h1>
+        <p class="hero-subtitle">
+          Справжній український рок, який гуркоче в серці.
+        </p>
+
+        <p class="hero-description">
+          «Грим та Грім» — це поєднання потужних гітарних рифів, чесних текстів
+          і вибухової енергії сцени. Ми граємо для тих, хто цінує живий звук,
+          свободу та силу музики.
+        </p>
+        <p class="hero-description">
+          Наші концерти - це завжди контакт з залом, драйв і емоції. Приєднуйся
+          до нас на найближчих виступах і відчуй цей саунд наживо!
+        </p>
+        <a href="#schedule" class="btn-primary">ЗАМОВИТИ КВИТОК</a>
+      </div>
+    </section>
+    <section id="schedule">
+      <h2 class="section-title">Найближчі концерти</h2>
+
+      <div class="schedule-container">
+        <div class="schedule-header">
+          <div>Місто / Заклад</div>
+          <div>К-сть місць</div>
+          <div>Дата і час</div>
+          <div></div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-cell city">Київ — Docker-G Pub</div>
+          <div class="schedule-cell seats" data-label="К-сть місць">250</div>
+          <div class="schedule-cell date" data-label="Дата і час">
+            25.10.2026, 19:00
+          </div>
+          <div class="schedule-cell action">
+            <a href="#" class="btn-ticket">Замовити квиток</a>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-cell city">Львів — !FESTrepublic</div>
+          <div class="schedule-cell seats" data-label="К-сть місць">400</div>
+          <div class="schedule-cell date" data-label="Дата і час">
+            01.11.2026, 20:00
+          </div>
+          <div class="schedule-cell action">
+            <a href="#" class="btn-ticket">Замовити квиток</a>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-cell city">Одеса — Зелений театр</div>
+          <div class="schedule-cell seats" data-label="К-сть місць">700</div>
+          <div class="schedule-cell date" data-label="Дата і час">
+            09.11.2026, 19:30
+          </div>
+          <div class="schedule-cell action">
+            <a href="#" class="btn-ticket">Замовити квиток</a>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-cell city">Харків — ArtZavod</div>
+          <div class="schedule-cell seats" data-label="К-сть місць">500</div>
+          <div class="schedule-cell date" data-label="Дата і час">
+            16.11.2026, 19:00
+          </div>
+          <div class="schedule-cell action">
+            <a href="#" class="btn-ticket">Замовити квиток</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="members">
+      <h2 class="section-title">Учасники гурту</h2>
+
+      <div class="members-container">
+        <input type="radio" name="member" id="close-all" hidden checked />
+
+        <input
+          type="radio"
+          name="member"
+          id="member-1"
+          class="member-toggle"
+          hidden
+        />
+
+        <label class="member-card" for="member-1">
+          <figure>
+            <div class="img-wrapper">
+              <img
+                src="img/member-1.jpeg"
+                alt="Максим — гітара"
+                class="member-img"
+              />
+            </div>
+
+            <figcaption class="member-info">
+              <p>Максим - гітара</p>
+
+              <p class="expanded-text">
+                Максим грає на гітарі вже понад 10 років. Його вибухові
+                соло-партії та важкі рифи формують фірмове звучання гурту.
+              </p>
+            </figcaption>
+          </figure>
+        </label>
+
+        <label class="modal-backdrop backdrop-1" for="close-all"></label>
+
+        <input
+          type="radio"
+          name="member"
+          id="member-2"
+          class="member-toggle"
+          hidden
+        />
+
+        <label class="member-card" for="member-2">
+          <figure>
+            <div class="img-wrapper">
+              <img
+                src="img/member-2.jpeg"
+                alt="Олена - вокал"
+                class="member-img"
+              />
+            </div>
+
+            <figcaption class="member-info">
+              <p>Олена - вокал</p>
+
+              <p class="expanded-text">
+                Олена - голос і душа колективу. Її вокал легко переходить від
+                ніжних етно-мотивів до потужного рокового драйву.
+              </p>
+            </figcaption>
+          </figure>
+        </label>
+
+        <label class="modal-backdrop backdrop-2" for="close-all"></label>
+
+        <input
+          type="radio"
+          name="member"
+          id="member-3"
+          class="member-toggle"
+          hidden
+        />
+
+        <label class="member-card" for="member-3">
+          <figure>
+            <div class="img-wrapper">
+              <img
+                src="img/member-3.jpeg"
+                alt="Тарас - барабани"
+                class="member-img"
+              />
+            </div>
+
+            <figcaption class="member-info">
+              <p>Тарас - барабани</p>
+
+              <p class="expanded-text">
+                Тарас відповідає за ритмічне серце гурту. Його енергія за
+                барабанною установкою заряджає кожен концерт.
+              </p>
+            </figcaption>
+          </figure>
+        </label>
+
+        <label class="modal-backdrop backdrop-3" for="close-all"></label>
+      </div>
+    </section>
+    <section id="history">
+      <h2 class="section-title">Наша історія</h2>
+
+      <div class="history-content">
+        <img src="img/hero-bg.png" alt="Concert photo" />
+        <p>
+          "Грим та грім" народилися з бажання створювати музику, яка
+          відчувається серцем. Ми почали свій шлях у маленькій студії в центрі
+          Києва, де кожен акорд, кожне слово було наповнене емоціями та
+          переживаннями. Це було місце, де народжувались наші перші пісні, де ми
+          вчились грати разом як єдиний організм.
+        </p>
+        <br />
+        <p>
+          За роки нашої діяльності ми виступили на десятках сцен, від невеликих
+          клубів до великих фестивалів. Наша музика — це поєднання традиційного
+          року з сучасними елементами, що робить її унікальною та впізнаваною.
+          Ми не боїмось експериментувати зі звуком, додаючи електронні елементи
+          або народні інструменти.
+        </p>
+        <br />
+        <p>
+          Кожен наш виступ — це не просто концерт, а справжня подія, де ми
+          ділимося своєю енергією з глядачами та створюємо неповторну атмосферу.
+          Ми віримо, що музика має силу об'єднувати людей, створювати спільноти
+          та надихати на зміни.
+        </p>
+        <br />
+        <p>
+          Кожен наш виступ — це не просто концерт, а справжня подія, де ми
+          ділимося своєю енергією з глядачами та створюємо неповторну атмосферу.
+          Ми віримо, що музика має силу об'єднувати людей, створювати спільноти
+          та надихати на зміни.
+        </p>
+      </div>
+    </section>
+    <section id="contacts">
+      <h2>Зв'яжись з нами</h2>
+      <p class="subtitle">Хочеш замовити виступ або маєш питання? Пиши!</p>
+
+      <div class="contacts-content">
+        <form class="contact-form">
+          <div class="row">
+            <div class="field">
+              <label>Ім'я</label>
+              <input type="text" />
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <input type="email" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Повідомлення</label>
+            <textarea></textarea>
+          </div>
+
+          <button>Відправити</button>
+        </form>
+
+        <div class="map">
+          <h3>Наше місцезнаходження</h3>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1270.7025842408598!2d30.521919474275144!3d50.43355336899159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf02b2b3a94f%3A0x783fe299564db0c2!2s!5e0!3m2!1sen!2sua!4v1783678780415!5m2!1sen!2sua"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>

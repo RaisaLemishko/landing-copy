@@ -1,0 +1,14 @@
+#history {
+  background-color: var(--bg-section-alt);
+}
+
+.history-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.history-content img {
+  float: right;
+  width: 420px;
+  margin: 0 0 20px 32px;
+}
