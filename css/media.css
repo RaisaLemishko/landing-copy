@@ -7,6 +7,10 @@
 
   .menu-toggle {
     display: inline-flex;
+    /* Box clearance from the screen edge: keeps the focus ring and the
+       hover square off the edge. Visible bar gap = this + the 16px
+       padding in header.css = 24px. */
+    margin-right: 8px;
   }
 
   /* Dropdown panel: overlays the hero, no layout jump */
