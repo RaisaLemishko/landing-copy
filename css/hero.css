@@ -1,7 +1,7 @@
 #hero {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)),
-    url("../img/hero-bg.png");
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
+    url("../img/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,8 +19,10 @@
 }
 
 #hero h1 {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -33,22 +35,35 @@
 
 .hero-description {
   font-size: 16px;
-  color: #b3b3b3;
+  color: #d0d0d0;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 
+.hero-accent {
+  color: var(--color-accent-blue);
+}
+
 .btn-primary {
   display: inline-block;
-  background-color: var(--color-accent);
+  background: linear-gradient(180deg, #ffd83d 0%, #ffbf00 100%);
   color: var(--bg-main);
   text-decoration: none;
   font-weight: bold;
-  padding: 14px 28px;
-  border-radius: 4px;
-  transition: background var(--transition-speed) var(--transition-func);
+  letter-spacing: 1px;
+  padding: 14px 34px;
+  border-radius: 12px;
+  box-shadow:
+    0 6px 24px rgba(255, 200, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition:
+    filter var(--transition-speed) var(--transition-func),
+    box-shadow var(--transition-speed) var(--transition-func);
 }
 
 .btn-primary:hover {
-  background-color: #e6b800;
+  filter: brightness(1.08);
+  box-shadow:
+    0 6px 32px rgba(255, 200, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }

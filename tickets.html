@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G & G — Квитки</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .tickets-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .tickets-card {
+        max-width: 520px;
+        width: 100%;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 40px 32px;
+        text-align: center;
+      }
+
+      .tickets-card h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      .tickets-event {
+        color: var(--color-accent);
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+
+      .tickets-note {
+        color: var(--text-muted);
+        margin-bottom: 28px;
+      }
+
+      .tickets-back {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="tickets-page">
+      <div class="tickets-card">
+        <h1>Замовлення квитків</h1>
+        <p class="tickets-event">Гурт «Грим та Грім» — живий концерт</p>
+        <p class="tickets-note">
+          Онлайн-продаж квитків скоро запрацює. Слідкуйте за оновленнями або
+          напишіть нам через форму контактів.
+        </p>
+        <a href="index.html#schedule" class="btn-ticket tickets-back"
+          >До розкладу концертів</a
+        >
+      </div>
+    </main>
+
+    <script>
+      const events = {
+        kyiv: "Київ — Docker-G Pub, 25.10.2026, 19:00",
+        lviv: "Львів — !FESTrepublic, 01.11.2026, 20:00",
+        odesa: "Одеса — Зелений театр, 09.11.2026, 19:30",
+        kharkiv: "Харків — ArtZavod, 16.11.2026, 19:00",
+      };
+      const key = new URLSearchParams(location.search).get("event");
+      if (events[key]) {
+        document.querySelector(".tickets-event").textContent = events[key];
+      }
+    </script>
+  </body>
+</html>

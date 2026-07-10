@@ -31,3 +31,70 @@ li a {
 li a:hover {
   background-color: var(--bg-section-alt);
 }
+
+/* Mobile menu toggle (hidden on desktop, shown <=768px in media.css).
+   The padding below is THE knob for the icon's distance from the right
+   screen edge: the nav pins the button's box flush to the edge, so the
+   visible gap equals this padding. 16px mirrors the logo's own padding,
+   putting the bars exactly as far from the right edge as the "G" is
+   from the left. It also keeps the tap target >=44px (54x48).
+   background/border are cleared to strip the default button chrome. */
+.menu-toggle {
+  display: none;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Subtle hover feedback for pointer users on narrow viewports. */
+.menu-toggle:hover {
+  background: var(--bg-section-alt);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: currentColor;
+  transition:
+    transform var(--transition-speed) var(--transition-func),
+    opacity var(--transition-speed) var(--transition-func);
+}
+
+/* Hamburger -> X: translateY(7px) = bar height (2px) + gap (5px),
+   so the outer bars land on the center line before rotating. */
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Desktop: the panel wrapper vanishes from layout and the ul is a
+   direct flex item of nav again, keeping the desktop header as-is. */
+.menu-panel {
+  display: contents;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+nav li a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}

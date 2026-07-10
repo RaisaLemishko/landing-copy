@@ -51,7 +51,7 @@ textarea {
   min-height: 120px;
 }
 
-button {
+.contact-form button {
   width: max-content;
   padding: 14px 26px;
   border: none;
@@ -62,7 +62,7 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+.contact-form button:hover {
   background: #ff5d85;
 }
 
