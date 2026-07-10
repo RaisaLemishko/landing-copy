@@ -60,8 +60,9 @@
   padding: 10px 16px;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 4px;
-  transition: transform var(--transition-speed) var(--transition-func);
+  letter-spacing: 0.5px;
+  border-radius: 12px;
+  transition: filter var(--transition-speed) var(--transition-func);
 }
 
 .btn-ticket:hover {
