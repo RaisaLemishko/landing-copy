@@ -39,7 +39,7 @@ li a:hover {
    background/border are cleared to strip the default button chrome. */
 .menu-toggle {
   display: none;
-  padding: 16px;
+  padding: 24px;
   border: none;
   border-radius: 8px;
   background: transparent;
