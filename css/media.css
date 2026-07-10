@@ -1,19 +1,55 @@
 @media (max-width: 768px) {
+  /* Header bar stays a single row: logo left, toggle right */
   nav {
-    flex-direction: column;
-    gap: 15px;
+    position: relative;
     align-items: center;
   }
 
-  ul {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Dropdown panel: overlays the hero, no layout jump */
+  .menu-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-rows: 0fr;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      grid-template-rows var(--transition-speed) var(--transition-func),
+      opacity var(--transition-speed) var(--transition-func),
+      visibility var(--transition-speed) var(--transition-func);
+  }
+
+  .menu-toggle[aria-expanded="true"] + .menu-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Single grid child: must be allowed to shrink to 0 and clip */
+  .menu-panel ul {
+    min-height: 0;
+    overflow: hidden;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .menu-panel li {
     width: 100%;
   }
 
-  li {
-    width: 100%;
+  .menu-panel li + li {
+    border-top: 1px solid var(--border-subtle);
   }
 
   #hero {
@@ -111,5 +147,15 @@
   .schedule-cell.action {
     display: block;
     margin-top: 4px;
+  }
+}
+
+/* Must stay after the 768px block above: the .menu-panel transition is
+   declared there at equal specificity, so this later position in the
+   last-imported stylesheet is what lets the override win the cascade. */
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle span,
+  .menu-panel {
+    transition-duration: 0.01s;
   }
 }

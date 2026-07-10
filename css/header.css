@@ -31,3 +31,69 @@ li a {
 li a:hover {
   background-color: var(--bg-section-alt);
 }
+
+/* Mobile menu toggle (hidden on desktop, shown <=768px in media.css).
+   Every property declared by the button rule in contacts.css is reset
+   here explicitly so the toggle never inherits the form-button look. */
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Needed at (0,2,0): the button:hover rule in contacts.css is (0,1,1)
+   and would otherwise repaint the toggle on hover. */
+.menu-toggle:hover {
+  background: var(--bg-section-alt);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: currentColor;
+  transition:
+    transform var(--transition-speed) var(--transition-func),
+    opacity var(--transition-speed) var(--transition-func);
+}
+
+/* Hamburger -> X: translateY(7px) = bar height (2px) + gap (5px),
+   so the outer bars land on the center line before rotating. */
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Desktop: the panel wrapper vanishes from layout and the ul is a
+   direct flex item of nav again, keeping the desktop header as-is. */
+.menu-panel {
+  display: contents;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+nav li a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
