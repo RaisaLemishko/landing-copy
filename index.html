@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>G & G</title>
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/menu.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
         <a href="#hero" class="logo">G & G</a>
 
-        <ul>
-          <li><a href="#hero">Про гурт</a></li>
-          <li><a href="#schedule">Концерти</a></li>
-          <li><a href="#members">Галерея</a></li>
-          <li><a href="#contacts">Контакти</a></li>
-        </ul>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-menu"
+          aria-label="Меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="menu-panel" id="site-menu">
+          <ul>
+            <li><a href="#hero">Про гурт</a></li>
+            <li><a href="#schedule">Концерти</a></li>
+            <li><a href="#members">Галерея</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <section id="hero">
@@ -27,21 +42,23 @@
         </p>
 
         <p class="hero-description">
-          «Грим та Грім» — це поєднання потужних гітарних рифів, чесних текстів
-          і вибухової енергії сцени. Ми граємо для тих, хто цінує живий звук,
-          свободу та силу музики.
+          «Грим та Грім» — це поєднання
+          <span class="hero-accent">потужних</span> гітарних рифів, чесних
+          текстів і вибухової енергії сцени. Ми граємо для тих, хто цінує живий
+          звук, свободу та силу музики.
         </p>
         <p class="hero-description">
-          Наші концерти - це завжди контакт з залом, драйв і емоції. Приєднуйся
-          до нас на найближчих виступах і відчуй цей саунд наживо!
+          <span class="hero-accent">Наші концерти</span> - це завжди контакт з
+          залом, драйв і емоції. Приєднуйся до нас на найближчих виступах і
+          відчуй цей саунд наживо!
         </p>
         <a href="#schedule" class="btn-primary">ЗАМОВИТИ КВИТОК</a>
       </div>
     </section>
     <section id="schedule">
-      <h2 class="section-title">Найближчі концерти</h2>
-
       <div class="schedule-container">
+        <h2 class="section-title">Найближчі концерти</h2>
+
         <div class="schedule-header">
           <div>Місто / Заклад</div>
           <div>К-сть місць</div>
@@ -198,7 +215,7 @@
       <h2 class="section-title">Наша історія</h2>
 
       <div class="history-content">
-        <img src="img/hero-bg.png" alt="Concert photo" />
+        <img src="img/hero-bg.jpg" alt="Concert photo" />
         <p>
           "Грим та грім" народилися з бажання створювати музику, яка
           відчувається серцем. Ми почали свій шлях у маленькій студії в центрі
