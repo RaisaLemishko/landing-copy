@@ -6,6 +6,7 @@
   }
 
   ul {
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     width: 100%;
@@ -72,5 +73,43 @@
 
   .row {
     grid-template-columns: 1fr;
+  }
+
+  .schedule-container {
+    padding: 20px;
+  }
+
+  .schedule-header {
+    display: none;
+  }
+
+  .schedule-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .schedule-cell {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .schedule-cell.city {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .schedule-cell[data-label]::before {
+    content: attr(data-label);
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .schedule-cell.action {
+    display: block;
+    margin-top: 4px;
   }
 }
