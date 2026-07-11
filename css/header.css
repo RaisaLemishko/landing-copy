@@ -33,11 +33,11 @@ li a:hover {
 }
 
 /* Mobile menu toggle (hidden on desktop, shown <=768px in media.css).
-   The padding below is THE knob for the icon's distance from the right
-   screen edge: the nav pins the button's box flush to the edge, so the
-   visible gap equals this padding. 16px mirrors the logo's own padding,
-   putting the bars exactly as far from the right edge as the "G" is
-   from the left. It also keeps the tap target >=44px (54x48).
+   Edge geometry has two knobs: margin-right (media.css) pushes the
+   whole box — and with it the focus ring and hover square — off the
+   screen edge, and the padding below insets the icon within the box.
+   Visible bar gap from the edge = margin + padding = 8 + 16 = 24px.
+   The padding also keeps the tap target >=44px (54x48).
    background/border are cleared to strip the default button chrome. */
 .menu-toggle {
   display: none;

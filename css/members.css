@@ -1,5 +1,10 @@
 
 
+/* Unlike the other section titles, this one is centered in the mockup */
+#members .section-title {
+  text-align: center;
+}
+
 .members-container {
   display: flex;
   justify-content: center;
@@ -103,7 +108,11 @@
 
   transform: translate(-50%, -50%);
 
-  width: min(420px, 92vw);
+  width: min(520px, 92vw);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
 
   background: var(--bg-card);
 
@@ -114,6 +123,13 @@
   z-index: 2;
 
   animation: modalFade var(--transition-speed) var(--transition-func);
+}
+
+/* The card photo is 250px tall; the open modal shows it enlarged */
+#member-1:checked + .member-card .img-wrapper,
+#member-2:checked + .member-card .img-wrapper,
+#member-3:checked + .member-card .img-wrapper {
+  height: min(48vh, 440px);
 }
 
 #member-1:checked + .member-card .expanded-text,
@@ -128,6 +144,83 @@
 #member-2:checked ~ .backdrop-2,
 #member-3:checked ~ .backdrop-3 {
   opacity: 1;
+  visibility: visible;
+}
+
+.modal-nav {
+  position: fixed;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(24, 24, 31, 0.85);
+
+  border: 1px solid var(--border-subtle);
+
+  color: var(--text-main);
+
+  cursor: pointer;
+
+  /* No show/hide fade: the modal itself closes instantly, and an
+     untransitioned visibility flip is what lets gallery.js move focus
+     to the replacement chevron synchronously on the radio's change
+     event (mid-transition the new chevron would not be focusable). */
+  visibility: hidden;
+
+  /* Above the modal figure (z-index: 2) and backdrop (z-index: 1) */
+  z-index: 3;
+
+  transition:
+    background-color var(--transition-speed) var(--transition-func),
+    color var(--transition-speed) var(--transition-func);
+}
+
+.modal-nav:hover {
+  background: var(--color-accent);
+  color: var(--bg-main);
+}
+
+.member-card:focus-visible,
+.modal-nav:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.modal-nav svg {
+  width: 22px;
+  height: 22px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Offsets mirror the modal: half of min(520px, 92vw) plus a gap. The max()
+   keeps the chevrons on-screen on narrow viewports, where they overlay the
+   photo edges instead of sitting beside them. */
+.modal-prev {
+  left: max(12px, calc(50% - min(260px, 46vw) - 60px));
+}
+
+.modal-next {
+  right: max(12px, calc(50% - min(260px, 46vw) - 60px));
+}
+
+#member-1:checked ~ .nav-1,
+#member-2:checked ~ .nav-2,
+#member-3:checked ~ .nav-3 {
   visibility: visible;
 }
 
