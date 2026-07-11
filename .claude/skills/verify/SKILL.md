@@ -32,9 +32,11 @@ the version bumps).
 
 - Mobile menu (`js/menu.js`): toggle at ≤768px viewport, Escape,
   outside pointerdown, link click — all should close it.
-- Members gallery modal (CSS-only, radio-input driven): click a
-  `.member-card` → its `figure` becomes a fixed modal + backdrop;
-  chevron labels `.modal-prev/.modal-next.nav-N` re-check the
-  neighbouring radio; backdrop click checks `#close-all`.
+- Members gallery modal (radio-input driven CSS, keyboard support in
+  `js/gallery.js`): click a `.member-card` → its `figure` becomes a
+  fixed modal + backdrop; chevron labels `.modal-prev/.modal-next.nav-N`
+  re-check the neighbouring radio; backdrop click checks `#close-all`.
+  Keyboard: Tab + Enter/Space on cards and chevrons, arrow keys
+  navigate while open, Escape closes.
 - Check both 1280px and 375px viewports — media.css changes layout
   substantially at 768px.
