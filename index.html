@@ -6,6 +6,7 @@
     <title>G & G</title>
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/menu.js" defer></script>
+    <script src="js/gallery.js" defer></script>
   </head>
   <body>
     <header>
@@ -125,7 +126,7 @@
           hidden
         />
 
-        <label class="member-card" for="member-1">
+        <label class="member-card" for="member-1" role="button" tabindex="0">
           <figure>
             <div class="img-wrapper">
               <img
@@ -156,7 +157,7 @@
           hidden
         />
 
-        <label class="member-card" for="member-2">
+        <label class="member-card" for="member-2" role="button" tabindex="0">
           <figure>
             <div class="img-wrapper">
               <img
@@ -187,7 +188,7 @@
           hidden
         />
 
-        <label class="member-card" for="member-3">
+        <label class="member-card" for="member-3" role="button" tabindex="0">
           <figure>
             <div class="img-wrapper">
               <img
@@ -209,6 +210,79 @@
         </label>
 
         <label class="modal-backdrop backdrop-3" for="close-all"></label>
+
+        <!-- Modal prev/next chevrons: each label re-checks the neighbouring
+             member's radio, so the enlarged view swaps with no JS. They must
+             stay after every radio input so the ~ selectors in members.css
+             can reveal the pair belonging to the open member. -->
+        <label
+          class="modal-nav modal-prev nav-1"
+          for="member-3"
+          aria-label="Попереднє фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </label>
+        <label
+          class="modal-nav modal-next nav-1"
+          for="member-2"
+          aria-label="Наступне фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </label>
+
+        <label
+          class="modal-nav modal-prev nav-2"
+          for="member-1"
+          aria-label="Попереднє фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </label>
+        <label
+          class="modal-nav modal-next nav-2"
+          for="member-3"
+          aria-label="Наступне фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </label>
+
+        <label
+          class="modal-nav modal-prev nav-3"
+          for="member-2"
+          aria-label="Попереднє фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </label>
+        <label
+          class="modal-nav modal-next nav-3"
+          for="member-1"
+          aria-label="Наступне фото"
+          role="button"
+          tabindex="0"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </label>
       </div>
     </section>
     <section id="history">
