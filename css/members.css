@@ -1,5 +1,10 @@
 
 
+/* Unlike the other section titles, this one is centered in the mockup */
+#members .section-title {
+  text-align: center;
+}
+
 .members-container {
   display: flex;
   justify-content: center;
