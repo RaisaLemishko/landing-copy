@@ -1,0 +1,250 @@
+/* ==========================================================================
+   Style-guide page chrome (design-system.html only).
+   Everything here is scoped with a .ds- prefix so it can never leak into
+   the site's own components; the demos themselves reuse the real classes
+   from the section stylesheets.
+   ========================================================================== */
+
+.ds-header {
+  padding: var(--space-8) 10% var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ds-header h1 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-2);
+}
+
+.ds-header p {
+  color: var(--text-muted);
+  max-width: 720px;
+}
+
+.ds-section {
+  padding: var(--space-10) 10%;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ds-section > h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
+}
+
+.ds-section > p {
+  color: var(--text-muted);
+  max-width: 720px;
+  margin-bottom: var(--space-6);
+}
+
+.ds-group {
+  margin-bottom: var(--space-8);
+}
+
+.ds-group:last-child {
+  margin-bottom: 0;
+}
+
+.ds-group > h3 {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* Token name / value chips */
+.ds-token {
+  font-family: "Courier New", monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  word-break: break-all;
+}
+
+.ds-value {
+  font-family: "Courier New", monospace;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Color swatches */
+.ds-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.ds-swatch {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.ds-swatch-chip {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.ds-swatch-meta {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Typography specimens */
+.ds-type-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-6);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ds-type-row:last-child {
+  border-bottom: none;
+}
+
+.ds-type-meta {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ds-type-sample {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Spacing scale */
+.ds-space-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-2) 0;
+}
+
+.ds-space-row .ds-token {
+  flex: 0 0 140px;
+}
+
+.ds-space-row .ds-value {
+  flex: 0 0 60px;
+}
+
+.ds-space-bar {
+  height: var(--space-4);
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Radius / elevation tiles */
+.ds-tile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.ds-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ds-radius-box {
+  width: 96px;
+  height: 96px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.ds-shadow-box {
+  width: 160px;
+  height: 96px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.ds-gradient-box {
+  height: 96px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Motion demo */
+.ds-motion-chip {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-speed) var(--transition-func),
+    transform var(--transition-speed) var(--transition-func);
+}
+
+.ds-motion-chip:hover {
+  background: var(--color-accent);
+  color: var(--text-inverse);
+  transform: translateY(-4px);
+}
+
+/* Component demo canvas */
+.ds-demo {
+  background: var(--bg-section-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.ds-demo--block {
+  display: block;
+}
+
+.ds-note {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-3);
+  max-width: 720px;
+}
+
+.ds-footer {
+  padding: var(--space-6) 10%;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.ds-footer a {
+  color: var(--color-accent-blue);
+}
+
+@media (max-width: 768px) {
+  .ds-header,
+  .ds-section,
+  .ds-footer {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+
+  .ds-type-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .ds-type-sample {
+    white-space: normal;
+  }
+}

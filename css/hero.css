@@ -1,7 +1,5 @@
 #hero {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
-    url("../img/hero-bg.jpg");
+  background-image: var(--gradient-hero-scrim), url("../img/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,24 +17,24 @@
 }
 
 #hero h1 {
-  font-size: 60px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  line-height: 1.15;
-  color: #ffffff;
-  margin-bottom: 20px;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+  color: var(--text-main);
+  margin-bottom: var(--space-5);
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  color: #e0e0e0;
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
   margin-bottom: 15px;
 }
 
 .hero-description {
-  font-size: 16px;
-  color: #d0d0d0;
-  line-height: 1.6;
+  font-size: var(--font-size-base);
+  color: var(--text-tertiary);
+  line-height: var(--line-height-base);
   margin-bottom: 30px;
 }
 
@@ -46,16 +44,14 @@
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(180deg, #ffd83d 0%, #ffbf00 100%);
-  color: var(--bg-main);
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
   text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
   padding: 14px 34px;
-  border-radius: 12px;
-  box-shadow:
-    0 6px 24px rgba(255, 200, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glow-accent);
   transition:
     filter var(--transition-speed) var(--transition-func),
     box-shadow var(--transition-speed) var(--transition-func);
@@ -63,7 +59,5 @@
 
 .btn-primary:hover {
   filter: brightness(1.08);
-  box-shadow:
-    0 6px 32px rgba(255, 200, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-glow-accent-hover);
 }

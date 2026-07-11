@@ -1,23 +1,151 @@
+/* ==========================================================================
+   G&G Design System — design tokens
+   ==========================================================================
+   Two tiers:
+     1. Primitives  — raw palette / scale values. Never used directly by
+        component CSS; they only feed the semantic tier.
+     2. Semantic    — role-based tokens (backgrounds, text, accents, borders,
+        elevation, motion, layout). Component CSS consumes ONLY these.
+   Full reference with usage rules: DESIGN_SYSTEM.md
+   Living style guide: design-system.html
+   ========================================================================== */
+
 :root {
+  /* ------------------------------------------------------------------
+     1. PRIMITIVES
+     ------------------------------------------------------------------ */
 
-  --bg-main: #0a0a0c;
-  --bg-section-alt: #121216;
-  --bg-card: #18181f;
+  /* Neutrals (higher number = darker) */
+  --gray-100: #ffffff;
+  --gray-200: #e0e0e0;
+  --gray-300: #d0d0d0;
+  --gray-400: #b3b3b3;
+  --gray-700: #333333;
+  --gray-800: #18181f;
+  --gray-850: #121216;
+  --gray-900: #0a0a0c;
 
-  --text-main: #ffffff;
-  --text-muted: #b3b3b3;
-  --color-accent: #ffcc00;
-  --color-accent-blue: #6babff;
-  --color-btn-red: #e62e5a;
+  /* Brand yellow (accent) */
+  --yellow-400: #ffd83d;
+  --yellow-500: #ffcc00;
+  --yellow-600: #ffbf00;
 
+  /* Brand red (call to action) */
+  --red-300: #ff5d85;
+  --red-500: #e62e5a;
+
+  /* Brand blue (inline text accent) */
+  --blue-300: #6babff;
+
+  /* Type scale */
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-5xl: 60px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.15;
+  --line-height-base: 1.6;
+
+  --letter-spacing-tight: 0.5px;
+  --letter-spacing-wide: 1px;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-20: 80px;
+
+  /* Corner radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-full: 50%;
+
+  /* ------------------------------------------------------------------
+     2. SEMANTIC TOKENS
+     ------------------------------------------------------------------ */
+
+  /* Typography */
+  --font-family-base: Arial, Helvetica, sans-serif;
+
+  /* Backgrounds */
+  --bg-main: var(--gray-900);
+  --bg-section-alt: var(--gray-850);
+  --bg-card: var(--gray-800);
+  --bg-card-translucent: rgba(24, 24, 31, 0.85);
+
+  /* Text */
+  --text-main: var(--gray-100);
+  --text-secondary: var(--gray-200);
+  --text-tertiary: var(--gray-300);
+  --text-muted: var(--gray-400);
+  /* Dark text used on light/accent surfaces (yellow button) */
+  --text-inverse: var(--gray-900);
+
+  /* Accents */
+  --color-accent: var(--yellow-500);
+  --color-accent-blue: var(--blue-300);
+  --color-btn-red: var(--red-500);
+  --color-btn-red-hover: var(--red-300);
+
+  /* Gradients */
+  --gradient-accent: linear-gradient(
+    180deg,
+    var(--yellow-400) 0%,
+    var(--yellow-600) 100%
+  );
+  --gradient-hero-scrim: linear-gradient(
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.65)
+  );
+
+  /* Borders */
   --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-input: var(--gray-700);
 
+  /* Overlays */
+  --overlay-backdrop: rgba(0, 0, 0, 0.72);
+  --overlay-hover: rgba(255, 255, 255, 0.04);
 
-  --section-padding: 80px 10%;
-  --section-padding-mobile: 40px 20px;
+  /* Elevation */
+  --shadow-glow-accent:
+    0 6px 24px rgba(255, 200, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --shadow-glow-accent-hover:
+    0 6px 32px rgba(255, 200, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --shadow-dropdown: 0 12px 24px rgba(0, 0, 0, 0.45);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.55);
 
+  /* Motion */
   --transition-speed: 0.3s;
   --transition-func: ease-in-out;
+  --duration-slow: 0.35s;
+  --ease-smooth: ease;
+
+  /* Layout
+     Breakpoint (for reference — CSS vars can't be used in media queries):
+     mobile-first switch happens at max-width: 768px */
+  --container-md: 1000px;
+  --container-lg: 1100px;
+  --container-xl: 1200px;
+
+  --section-padding: var(--space-20) 10%;
+  --section-padding-mobile: var(--space-10) var(--space-5);
+
+  /* Focus ring (accessibility) */
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-ring-offset: 2px;
 }
-
-

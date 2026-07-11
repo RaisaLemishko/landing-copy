@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G&G Design System</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/design-system.css" />
+  </head>
+  <body>
+    <header class="ds-header">
+      <h1>G&G Design System</h1>
+      <p>
+        Living style guide for the «Грим та Грім» site. Foundations are defined
+        as CSS custom properties in <span class="ds-token">css/variables.css</span>;
+        every component below is rendered with the real production classes.
+        Written reference: <span class="ds-token">DESIGN_SYSTEM.md</span>.
+      </p>
+    </header>
+
+    <!-- ================================================================
+         FOUNDATIONS
+         ================================================================ -->
+    <section class="ds-section">
+      <h2>Color</h2>
+      <p>
+        Component CSS consumes only the semantic tokens shown here. The raw
+        palette (<span class="ds-token">--gray-*</span>,
+        <span class="ds-token">--yellow-*</span>,
+        <span class="ds-token">--red-*</span>,
+        <span class="ds-token">--blue-*</span>) exists solely to feed them.
+      </p>
+
+      <div class="ds-group">
+        <h3>Backgrounds</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-main)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--bg-main</span>
+              <span class="ds-value">#0a0a0c · page background</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-section-alt)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--bg-section-alt</span>
+              <span class="ds-value">#121216 · alternating sections</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--bg-card</span>
+              <span class="ds-value">#18181f · cards, inputs, panels</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card-translucent)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--bg-card-translucent</span>
+              <span class="ds-value">rgba(24,24,31,.85) · floating controls</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-group">
+        <h3>Text</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); color: var(--text-main)">Aa</div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--text-main</span>
+              <span class="ds-value">#ffffff · headings, body</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); color: var(--text-secondary)">Aa</div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--text-secondary</span>
+              <span class="ds-value">#e0e0e0 · subtitles</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); color: var(--text-tertiary)">Aa</div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--text-tertiary</span>
+              <span class="ds-value">#d0d0d0 · long-form copy on imagery</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); color: var(--text-muted)">Aa</div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--text-muted</span>
+              <span class="ds-value">#b3b3b3 · captions, table headers</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--color-accent); color: var(--text-inverse)">Aa</div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--text-inverse</span>
+              <span class="ds-value">#0a0a0c · dark text on accent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-group">
+        <h3>Accents</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--color-accent)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--color-accent</span>
+              <span class="ds-value">#ffcc00 · brand yellow, focus, hovers</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--color-accent-blue)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--color-accent-blue</span>
+              <span class="ds-value">#6babff · inline text emphasis</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--color-btn-red)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--color-btn-red</span>
+              <span class="ds-value">#e62e5a · secondary CTA</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--color-btn-red-hover)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--color-btn-red-hover</span>
+              <span class="ds-value">#ff5d85 · red CTA hover</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-group">
+        <h3>Borders &amp; overlays</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); border-bottom: 4px solid var(--border-subtle)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--border-subtle</span>
+              <span class="ds-value">rgba(255,255,255,.1) · dividers, card edges</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--bg-card); border-bottom: 4px solid var(--border-input)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--border-input</span>
+              <span class="ds-value">#333333 · form controls</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--overlay-backdrop)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--overlay-backdrop</span>
+              <span class="ds-value">rgba(0,0,0,.72) · modal backdrop</span>
+            </div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch-chip" style="background: var(--overlay-hover)"></div>
+            <div class="ds-swatch-meta">
+              <span class="ds-token">--overlay-hover</span>
+              <span class="ds-value">rgba(255,255,255,.04) · row hover tint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-group">
+        <h3>Gradients</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-tile" style="align-items: stretch">
+            <div class="ds-gradient-box" style="background: var(--gradient-accent)"></div>
+            <span class="ds-token">--gradient-accent</span>
+            <span class="ds-value">#ffd83d → #ffbf00 · primary CTA</span>
+          </div>
+          <div class="ds-tile" style="align-items: stretch">
+            <div
+              class="ds-gradient-box"
+              style="background: var(--gradient-hero-scrim), url('img/hero-bg.jpg') center / cover"
+            ></div>
+            <span class="ds-token">--gradient-hero-scrim</span>
+            <span class="ds-value">black 85% → 65% · text legibility over photos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2>Typography</h2>
+      <p>
+        One family — <span class="ds-token">--font-family-base</span>
+        (Arial, Helvetica, sans-serif). Body text is
+        <span class="ds-token">--font-size-base</span> /
+        <span class="ds-token">--line-height-base</span>; display headings
+        tighten to <span class="ds-token">--line-height-tight</span> (1.15).
+      </p>
+
+      <div class="ds-group">
+        <h3>Scale</h3>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-5xl</span>
+            <span class="ds-value">60px · hero h1 (40px on mobile)</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-black); line-height: var(--line-height-tight)">Грим та Грім</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-4xl</span>
+            <span class="ds-value">40px · hero h1, mobile</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-black); line-height: var(--line-height-tight)">Грим та Грім</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-3xl</span>
+            <span class="ds-value">32px · section titles</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold)">Найближчі концерти</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-2xl</span>
+            <span class="ds-value">28px · page-level card titles</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold)">Замовлення квитків</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-xl</span>
+            <span class="ds-value">24px · logo, guide headings</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold)">G &amp; G</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-lg</span>
+            <span class="ds-value">20px · hero subtitle</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-lg)">Справжній український рок, який гуркоче в серці.</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-md</span>
+            <span class="ds-value">18px · emphasized rows, mobile subtitle</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-md)">Київ — Docker-G Pub</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-base</span>
+            <span class="ds-value">16px · body copy</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-base)">Ми граємо для тих, хто цінує живий звук, свободу та силу музики.</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-size-sm</span>
+            <span class="ds-value">14px · table headers, captions, small buttons</span>
+          </div>
+          <div class="ds-type-sample" style="font-size: var(--font-size-sm)">К-сть місць · Дата і час</div>
+        </div>
+      </div>
+
+      <div class="ds-group">
+        <h3>Weights &amp; tracking</h3>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-weight-regular</span>
+            <span class="ds-value">400</span>
+          </div>
+          <div class="ds-type-sample" style="font-weight: var(--font-weight-regular)">Body copy and descriptions</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-weight-bold</span>
+            <span class="ds-value">700</span>
+          </div>
+          <div class="ds-type-sample" style="font-weight: var(--font-weight-bold)">Buttons, logo, table headers</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--font-weight-black</span>
+            <span class="ds-value">900</span>
+          </div>
+          <div class="ds-type-sample" style="font-weight: var(--font-weight-black)">Hero display heading</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--letter-spacing-tight</span>
+            <span class="ds-value">0.5px</span>
+          </div>
+          <div class="ds-type-sample" style="letter-spacing: var(--letter-spacing-tight)">Hero heading, small buttons</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">
+            <span class="ds-token">--letter-spacing-wide</span>
+            <span class="ds-value">1px</span>
+          </div>
+          <div class="ds-type-sample" style="letter-spacing: var(--letter-spacing-wide); text-transform: uppercase">Primary CTA label</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2>Spacing</h2>
+      <p>
+        4px-base scale. Section shells use
+        <span class="ds-token">--section-padding</span> (80px / 10%) on desktop
+        and <span class="ds-token">--section-padding-mobile</span> (40px / 20px)
+        under 768px.
+      </p>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-1</span><span class="ds-value">4px</span>
+        <div class="ds-space-bar" style="width: var(--space-1)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-2</span><span class="ds-value">8px</span>
+        <div class="ds-space-bar" style="width: var(--space-2)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-3</span><span class="ds-value">12px</span>
+        <div class="ds-space-bar" style="width: var(--space-3)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-4</span><span class="ds-value">16px</span>
+        <div class="ds-space-bar" style="width: var(--space-4)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-5</span><span class="ds-value">20px</span>
+        <div class="ds-space-bar" style="width: var(--space-5)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-6</span><span class="ds-value">24px</span>
+        <div class="ds-space-bar" style="width: var(--space-6)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-8</span><span class="ds-value">32px</span>
+        <div class="ds-space-bar" style="width: var(--space-8)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-10</span><span class="ds-value">40px</span>
+        <div class="ds-space-bar" style="width: var(--space-10)"></div>
+      </div>
+      <div class="ds-space-row">
+        <span class="ds-token">--space-20</span><span class="ds-value">80px</span>
+        <div class="ds-space-bar" style="width: var(--space-20)"></div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2>Corner radius</h2>
+      <div class="ds-tile-grid">
+        <div class="ds-tile">
+          <div class="ds-radius-box" style="border-radius: var(--radius-sm)"></div>
+          <span class="ds-token">--radius-sm</span>
+          <span class="ds-value">8px · inputs, small controls</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-radius-box" style="border-radius: var(--radius-md)"></div>
+          <span class="ds-token">--radius-md</span>
+          <span class="ds-value">12px · cards, buttons</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-radius-box" style="border-radius: var(--radius-lg)"></div>
+          <span class="ds-token">--radius-lg</span>
+          <span class="ds-value">14px · modals</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-radius-box" style="border-radius: var(--radius-full)"></div>
+          <span class="ds-token">--radius-full</span>
+          <span class="ds-value">50% · circular controls</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2>Elevation</h2>
+      <p>Shadows imply layer height: dropdowns sit above content, modals above everything. The accent glow is reserved for the primary CTA.</p>
+      <div class="ds-tile-grid">
+        <div class="ds-tile">
+          <div class="ds-shadow-box" style="box-shadow: var(--shadow-dropdown)"></div>
+          <span class="ds-token">--shadow-dropdown</span>
+          <span class="ds-value">menus, popovers</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-shadow-box" style="box-shadow: var(--shadow-modal)"></div>
+          <span class="ds-token">--shadow-modal</span>
+          <span class="ds-value">modal dialogs</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-shadow-box" style="box-shadow: var(--shadow-glow-accent); background: var(--gradient-accent)"></div>
+          <span class="ds-token">--shadow-glow-accent</span>
+          <span class="ds-value">primary CTA</span>
+        </div>
+        <div class="ds-tile">
+          <div class="ds-shadow-box" style="box-shadow: var(--shadow-glow-accent-hover); background: var(--gradient-accent)"></div>
+          <span class="ds-token">--shadow-glow-accent-hover</span>
+          <span class="ds-value">primary CTA, hover</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2>Motion</h2>
+      <p>
+        Standard transitions run <span class="ds-token">--transition-speed</span>
+        (0.3s) with <span class="ds-token">--transition-func</span>
+        (ease-in-out); softer reveals (gallery modal, expanding text) use
+        <span class="ds-token">--duration-slow</span> (0.35s) with
+        <span class="ds-token">--ease-smooth</span>. All animations collapse to
+        0.01s under <span class="ds-value">prefers-reduced-motion</span>.
+      </p>
+      <div class="ds-demo">
+        <span class="ds-motion-chip">Hover me — 0.3s ease-in-out</span>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         COMPONENTS — rendered with the real production classes
+         ================================================================ -->
+    <section class="ds-section">
+      <h2>Components</h2>
+      <p>
+        Every demo below uses the site's actual classes, so this page doubles
+        as a visual regression check: if a component drifts, it drifts here too.
+      </p>
+
+      <div class="ds-group">
+        <h3>Section title — <span class="ds-token">.section-title</span></h3>
+        <div class="ds-demo ds-demo--block">
+          <h2 class="section-title" style="margin-bottom: 0">Наша історія</h2>
+        </div>
+        <p class="ds-note">32px bold, left-aligned by default; the members section centers it.</p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Buttons</h3>
+        <div class="ds-demo">
+          <a href="#" class="btn-primary">ЗАМОВИТИ КВИТОК</a>
+          <a href="#" class="btn-ticket" style="display: inline-block">Замовити квиток</a>
+          <form class="contact-form" style="display: inline-flex" onsubmit="return false">
+            <button>Відправити</button>
+          </form>
+        </div>
+        <p class="ds-note">
+          <span class="ds-token">.btn-primary</span> — hero CTA: accent gradient,
+          glow shadow, uppercase label, one per view.
+          <span class="ds-token">.btn-ticket</span> — repeating row CTA in
+          <span class="ds-token">--color-btn-red</span>, darkens on hover.
+          The form submit button shares the red family and lightens to
+          <span class="ds-token">--color-btn-red-hover</span>.
+        </p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Form fields — <span class="ds-token">.field</span></h3>
+        <div class="ds-demo ds-demo--block">
+          <form class="contact-form" onsubmit="return false">
+            <div class="row">
+              <div class="field">
+                <label>Ім'я</label>
+                <input type="text" />
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" />
+              </div>
+            </div>
+            <div class="field">
+              <label>Повідомлення</label>
+              <textarea placeholder="Розкажи про свої ідеї..."></textarea>
+            </div>
+          </form>
+        </div>
+        <p class="ds-note">
+          Inputs sit on <span class="ds-token">--bg-card</span> with
+          <span class="ds-token">--border-input</span> and
+          <span class="ds-token">--radius-sm</span>; the two-column row
+          collapses under 768px.
+        </p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Schedule table — <span class="ds-token">.schedule-container</span></h3>
+        <div class="schedule-container">
+          <div class="schedule-header">
+            <div>Місто / Заклад</div>
+            <div>К-сть місць</div>
+            <div>Дата і час</div>
+            <div></div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-cell city">Київ — Docker-G Pub</div>
+            <div class="schedule-cell seats" data-label="К-сть місць">250</div>
+            <div class="schedule-cell date" data-label="Дата і час">25.10.2026, 19:00</div>
+            <div class="schedule-cell action"><a href="#" class="btn-ticket">Замовити квиток</a></div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-cell city">Львів — !FESTrepublic</div>
+            <div class="schedule-cell seats" data-label="К-сть місць">400</div>
+            <div class="schedule-cell date" data-label="Дата і час">01.11.2026, 20:00</div>
+            <div class="schedule-cell action"><a href="#" class="btn-ticket">Замовити квиток</a></div>
+          </div>
+        </div>
+        <p class="ds-note">
+          Card on <span class="ds-token">--bg-card</span> with
+          <span class="ds-token">--border-subtle</span> dividers and an
+          <span class="ds-token">--overlay-hover</span> row tint. Under 768px the
+          header row hides and each row stacks, labelling cells via
+          <span class="ds-value">data-label</span>.
+        </p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Member card — <span class="ds-token">.member-card</span></h3>
+        <div class="ds-demo">
+          <div class="member-card">
+            <figure>
+              <div class="img-wrapper">
+                <img src="img/member-1.jpeg" alt="Максим — гітара" class="member-img" />
+              </div>
+              <figcaption class="member-info">
+                <p>Максим - гітара</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="ds-note">
+          300px card, 250px photo, <span class="ds-token">--radius-md</span>.
+          On the site, selecting a card promotes its figure to a fixed modal
+          (<span class="ds-token">--radius-lg</span>,
+          <span class="ds-token">--shadow-modal</span>) over
+          <span class="ds-token">--overlay-backdrop</span>, with circular
+          chevron controls on <span class="ds-token">--bg-card-translucent</span>.
+        </p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Navigation — <span class="ds-token">.logo</span> + nav links</h3>
+        <div class="ds-demo ds-demo--block" style="padding: 0">
+          <nav>
+            <a href="#" class="logo">G &amp; G</a>
+            <ul>
+              <li><a href="#">Про гурт</a></li>
+              <li><a href="#">Концерти</a></li>
+              <li><a href="#">Контакти</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="ds-note">
+          Links tint to <span class="ds-token">--bg-section-alt</span> on hover.
+          Under 768px the list collapses into a hamburger-driven dropdown panel
+          with <span class="ds-token">--shadow-dropdown</span>.
+        </p>
+      </div>
+
+      <div class="ds-group">
+        <h3>Focus ring</h3>
+        <div class="ds-demo">
+          <a href="#" class="btn-primary" style="outline: var(--focus-ring); outline-offset: var(--focus-ring-offset)">Focused state</a>
+        </div>
+        <p class="ds-note">
+          All interactive elements show <span class="ds-token">--focus-ring</span>
+          (2px <span class="ds-token">--color-accent</span>) with
+          <span class="ds-token">--focus-ring-offset</span> on
+          <span class="ds-value">:focus-visible</span>.
+        </p>
+      </div>
+    </section>
+
+    <footer class="ds-footer">
+      <p>
+        G&amp;G Design System · tokens in
+        <span class="ds-token">css/variables.css</span> · reference in
+        <span class="ds-token">DESIGN_SYSTEM.md</span> ·
+        <a href="index.html">back to the site</a>
+      </p>
+    </footer>
+  </body>
+</html>
