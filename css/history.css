@@ -3,12 +3,12 @@
 }
 
 .history-content {
-  max-width: 1000px;
+  max-width: var(--container-md);
   margin: 0 auto;
 }
 
 .history-content img {
   float: right;
   width: 420px;
-  margin: 0 0 20px 32px;
+  margin: 0 0 var(--space-5) var(--space-8);
 }

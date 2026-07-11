@@ -24,7 +24,7 @@
     grid-template-rows: 0fr;
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border-subtle);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    box-shadow: var(--shadow-dropdown);
     opacity: 0;
     visibility: hidden;
     transition:
@@ -67,16 +67,16 @@
   }
 
   #hero h1 {
-    font-size: 40px;
+    font-size: var(--font-size-4xl);
     margin-bottom: 15px;
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: var(--font-size-md);
   }
 
   .hero-description {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     margin-bottom: 25px;
   }
 
@@ -137,14 +137,14 @@
   }
 
   .schedule-cell.city {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
   }
 
   .schedule-cell[data-label]::before {
     content: attr(data-label);
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
 
   .schedule-cell.action {
